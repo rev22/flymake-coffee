@@ -56,7 +56,11 @@
   (flymake-easy-load 'flymake-coffee-command
                      flymake-coffee-err-line-patterns
                      'tempdir
-                     "coffee"))
+                     "coffee")
+  ;; for https://github.com/illusori/emacs-flymake
+  (set (make-local-variable 'flymake-warn-line-regexp) "^warn")
+  ;; for emacs24 bzr-108160
+  (set (make-local-variable 'flymake-warn-line-re) "^warn"))
 
 
 (provide 'flymake-coffee)
