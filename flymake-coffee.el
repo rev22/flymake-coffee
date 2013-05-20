@@ -50,6 +50,10 @@
           filename)))
 
 ;;;###autoload
+(eval-after-load 'coffee-mode
+  '(add-hook 'coffee-mode-hook 'flymake-coffee-load))
+
+;;;###autoload
 (defun flymake-coffee-load ()
   "Configure flymake mode to check the current buffer's coffeescript syntax."
   (interactive)
